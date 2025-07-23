@@ -1,0 +1,303 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #000000;
+  border-bottom: 1px solid #1e293b;
+  height: 60px;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+}
+
+.download-btn {
+  padding: 1.3em 3em;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #fbfafa;
+  background-color: #000000;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.download-btn:hover {
+  background-color: #39926e;
+  /* box-shadow: 0px 10px 10px rgba(65, 129, 54); */
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.download-btn:active {
+  transform: translateY(-1px);
+}
+
+/* Hero section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.hero-image img {
+  width: 30vw;
+  height: auto;
+  border-radius: 12px;
+}
+
+.hero-content {
+  width: 30vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 12px;
+  background: #0e0d0d;
+  box-shadow: 15px 15px 30px rgb(65, 129, 54);
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  margin-bottom: 1.5rem;
+}
+
+/* About */
+.about-us {
+  width: 70vw;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  background: #0e0d0d;
+  box-shadow: 15px 15px 30px rgb(100, 31, 51);
+}
+
+.about-us h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-us p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #cbd5e1;
+}
+
+/* Contact */
+.connect-section {
+  padding: 3rem 2rem;
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  margin: 46px auto;
+  border-radius: 12px;
+  background: #0e0d0d;
+  box-shadow: 15px 15px 30px rgb(100, 31, 51);
+}
+
+.connect-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.connect-icons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.icon-card {
+  background-color: #1e293b;
+  padding: 1rem;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 0.75rem;
+  transition: transform 0.2s;
+}
+
+.icon-card:hover {
+  transform: scale(1.1);
+  box-shadow: 15px 15px 30px rgb(100, 31, 51);
+}
+
+.icon-card img {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 0.3rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  border-top: 1px solid #1e293b;
+}
+
+
+
+/* Responsiveness */
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    height: 4rem;
+  }
+
+  .logo {
+    width: 130px;
+    height: 130px;
+  }
+
+  .download-btn {
+    padding: 1em 2em;
+    font-size: 0.7rem;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+
+  .hero-image img{
+    width: 80vw;
+    object-fit: fill;
+    
+  }
+  .hero-content {
+    width: 80vw;
+    height: auto;
+  }
+
+  .about-us,
+  .connect-section {
+    width: 80vw;
+    padding: 2rem 1rem;
+  }
+
+  .connect-icons {
+    flex-wrap: wrap;
+  }
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .navbar {
+    flex-direction: row;
+    height: 60px;
+  }
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .download-btn{
+    padding: 0.8em 1.5em;
+    font-size: 0.6rem;
+  }
+
+  .hero-image img {
+    width: 85vw;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .hero-content {
+    width: 90vw;
+    height: auto;
+    }
+
+
+  .hero-content h1 {
+    font-size: 1.7rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 1rem
+  }
+
+  .about-us{
+    width: 85vw;
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .about-us h2,
+  .connect-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-us p{
+    font-size: 0.9rem;
+  }
+
+  .connect-section{
+    width: 85vw;
+    height: auto;
+  }
+  
+.connect-icons {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .icon-card {
+    width: 55px;
+    height: 55px;
+  }
+
+  .icon-card img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
