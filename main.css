@@ -1,0 +1,243 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #000000;
+  border-bottom: 1px solid #1e293b;
+  height: 60px;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.date-box {
+  background: #1a1a1a;
+  padding: 0.4rem 1rem;
+  border-radius: 45px;
+  font-size: 0.9rem;
+}
+
+.menu-btn {
+  background: #1a1a1a;
+  border: none;
+  border-radius: 45%;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  color: white;
+  cursor: pointer;
+}
+
+.profile-pic {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+
+/* Stats Section */
+.stats-row {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  padding: 1rem;
+  width: 80vw;
+  margin: 3rem auto;
+}
+
+.stats-box {
+  width: 25vw;
+  border-radius: 12px;
+  background: #0e0d0d;
+  box-shadow: 15px 15px 30px rgb(65, 129, 54);
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  transition: all 0.5s ease-in-out;
+}
+
+.stats-box h2 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.stats-box p {
+  font-size: 0.9rem;
+  color: #c3bdbd;
+  margin-top: 0.4rem;
+}
+.stats-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+}
+
+/* Macro */
+.macro-section {
+  width: 80vw;
+  margin: 3rem auto;
+}
+
+.macronutrient-grid {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.macro-box {
+  width: 19vw;
+  border-radius: 12px;
+  background: #122512;
+  padding: 1rem;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.macro-box:hover {
+  transform: scale(0.9);
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+}
+
+.macro-box h4 {
+  font-size: 1rem;
+  color: #c9c1c1;
+}
+
+.macro-box p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+/* Micro */
+.micro-section {
+  width: 80vw;
+  margin: 3rem auto;
+}
+.heading {
+  font-size: 1.3rem;
+  padding: 0.7rem;
+}
+.micronutrient-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.micro-box {
+  width: 15vw;
+  border-radius: 12px;
+  background: #2a0d15;
+  padding: 1rem;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.micro-box:hover {
+  transform: scale(0.9);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+}
+
+.micro-box h4 {
+  font-size: 1rem;
+  color: #c9c1c1;
+}
+
+.micro-box p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+/* Today meal section */
+.meal-page {
+  width: 80vw;
+  margin: 3rem auto;
+  padding: 1rem;
+}
+.meal-section {
+  color: #ffffff;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.meal-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.meal {
+  width: 15vw;
+  background: #0e0d0d;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.meal h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.meal p {
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.meal-info {
+  font-size: 0.8rem;
+  color: #cccccc;
+}
+
+.button-space {
+  width: 80vw;
+}
+
+.add-food-btn {
+  padding: 1.3em 3em;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #fbfafa;
+  background-color: #0e0d0d;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin: 0.5rem;
+}
+
+.add-food-btn:hover {
+  background-color: #122512;
+  color: #fff;
+  transform: translateY(-7px);
+}

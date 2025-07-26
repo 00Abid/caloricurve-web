@@ -7,3 +7,8 @@ footerText.textContent = "© " + new Date().getFullYear() + " CaloriCurve by Abi
 document.querySelector('#download-apk').onclick = function () {
   window.location.href = 'assets/CaloriCurve.apk';
 };
+
+
+//For Todays Date
+localStorage.setItem('today', new Date().toDateString());
+const date = localStorage.getItem('today');
