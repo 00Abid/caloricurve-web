@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>CaloriCurve Web</title>
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="main.css">
 </head>
 
@@ -19,7 +20,9 @@
 
     <div class="navbar-right">
       <div id="todayDate" class="date-box">Today : 2 <span id="date">October</span> 2023</div>
-      <button class="menu-btn">&#9776;</button>
+      <a href="chart.html">
+        <button class="menu-btn">&#9776;</button>
+      </a>
       <img src="assets/profile.png" alt="Profile" class="profile-pic">
     </div>
   </nav>
@@ -129,9 +132,11 @@
     <h3 class="heading">
       Today's Meals
     </h3>
-    <div class="button-space">
-      <button class="add-food-btn">Search and Add Food</button>
+    <div class="button space">
+      <input type="text" placeholder="Rice 100g Dal 100ml in breakfast" class="search-input" />
+      <button class="add-food-btn">Add Food</button>
     </div>
+
     <div class="meal-section">
       <div class="meal">
         <h3>Breakfast</h3>
@@ -163,9 +168,12 @@
         <span class="meal-info">80 kcal · 150g</span>
       </div>
     </div>
-    
+
   </section>
 
+  <footer class="footer">
+    <p class="footer-text">© 2025 CaloriCurve by Abid Khan</p>
+  </footer>
 
 
 
@@ -176,8 +184,7 @@
 
 
 
-
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 
 </html>

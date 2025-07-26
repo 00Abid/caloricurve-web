@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #000000;
+  border-bottom: 1px solid #1e293b;
+  height: 60px;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.date-box {
+  background: #1a1a1a;
+  padding: 0.4rem 1rem;
+  border-radius: 45px;
+  font-size: 0.9rem;
+}
+
+.menu-btn {
+  background: #1a1a1a;
+  border: none;
+  border-radius: 45%;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  color: white;
+  cursor: pointer;
+}
+
+.profile-pic {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+
+/* Tip Section */
+.tips-section {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  margin: 3rem auto;
+  gap: 3rem;
+  padding: 3rem 2rem;
+  color: #ffffff;
+}
+
+.tip-box {
+  width: 70vw;
+  height: 40vh;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0d0f0e;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 15px 15px 30px rgb(100, 31, 51);
+}
+
+.tip-text {
+  max-width: 60%;
+}
+
+.tip-text h3 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.tip-text p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #ccc;
+}
+
+.tip-btn {
+  padding: 1.3em 3em;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #fbfafa;
+  background-color: #000000;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin-top: 1rem;
+}
+
+.tip-btn:hover {
+  background-color: #122512;
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  border-top: 1px solid #1e293b;
+}
+
+/* Responsiveness */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .navbar {
+    flex-direction: row;
+    height: 60px;
+  }
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .navbar-right {
+    gap: 0.9rem;
+  }
+
+  .date-box {
+    display: none;
+  }
+  .menu-btn {
+    font-size: 0.8rem;
+  }
+
+  .profile-pic {
+    width: 20px;
+    height: 20px;
+  }
+
+  .tips-section {
+    padding: 2rem 1rem;
+    margin: 1.5rem auto;
+  }
+
+  .tip-box {
+    box-shadow: 5px 5px 15px rgb(100, 31, 51);
+  }
+  .tip-text {
+    max-width: 100%;
+  }
+
+  .tip-text h3 {
+    font-size: 0.9rem;
+  }
+
+  .tip-text p {
+    font-size: 0.7rem;
+  }
+
+  .tip-btn {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    height: 60px;
+  }
+  .logo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .tips-section {
+    margin: 2rem auto;
+  }
+
+  .tip-box {
+    box-shadow: 10px 10px 20px rgb(100, 31, 51);
+  }
+  .tip-text {
+    max-width: 100%;
+  }
+
+  .tip-text h3 {
+    font-size: 1.3rem;
+  }
+
+  .tip-text p {
+    font-size: 1rem;
+  }
+
+  .tip-btn {
+    width: 30vw;
+  }
+}

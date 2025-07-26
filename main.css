@@ -217,8 +217,18 @@ body {
 
 .button-space {
   width: 80vw;
+  height: auto;
 }
 
+.search-input {
+  width: 30vw;
+  padding: 0.6rem 1rem;
+  border-radius: 45px;
+  border: 1px solid #555;
+  background-color: #0e0d0d;
+  color: #fff;
+  z-index: 10;
+}
 .add-food-btn {
   padding: 1.3em 3em;
   font-size: 0.75rem;
@@ -240,4 +250,216 @@ body {
   background-color: #122512;
   color: #fff;
   transform: translateY(-7px);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  border-top: 1px solid #1e293b;
+}
+
+/* Responsive Design */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .navbar {
+    flex-direction: row;
+    height: 60px;
+  }
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .navbar-right {
+    gap: 0.9rem;
+  }
+
+  .date-box {
+    display: none;
+  }
+  .menu-btn {
+    font-size: 0.8rem;
+  }
+
+  .profile-pic {
+    width: 20px;
+    height: 20px;
+  }
+
+  .stats-row {
+    flex-direction: column;
+    align-items: center;
+    margin: 1.5rem auto;
+  }
+
+  .stats-box {
+    width: 60vw;
+    box-shadow: 5px 5px 15px rgb(65, 129, 54);
+  }
+
+  .stats-box h2 {
+    font-size: 1.4rem;
+  }
+
+  .stats-box p {
+    font-size: 0.8rem;
+  }
+  .macro-section {
+    margin: 1.5rem auto;
+  }
+
+  .macronutrient-grid {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .macro-box {
+    width: 35vw;
+    margin: auto;
+  }
+
+  .macro-box h4 {
+    font-size: 0.9rem;
+  }
+
+  .macro-box p {
+    font-size: 0.7rem;
+  }
+
+  .micro-section {
+    margin: 1.5rem auto;
+  }
+
+  .micronutrient-grid {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .micro-box {
+    width: 35vw;
+    margin: auto;
+  }
+
+  .micro-box h4 {
+    font-size: 0.9rem;
+  }
+
+  .micro-box p {
+    font-size: 0.7rem;
+  }
+
+  .heading {
+    font-size: 1rem;
+  }
+
+  .meal-section {
+    flex-direction: column;
+  }
+
+  .meal {
+    width: 70vw;
+    margin: auto;
+  }
+
+  .meal h3 {
+    font-size: 0.9rem;
+  }
+
+  .meal p {
+    font-size: 0.8rem;
+  }
+
+  .meal-info {
+    font-size: 0.7rem;
+  }
+
+  .search-input {
+    width: 70vw;
+    margin: 0.3rem;
+  }
+
+  .button-space {
+    width: 80vw;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    height: 60px;
+  }
+  .logo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .stats-row {
+    margin: 2rem auto;
+  }
+  .stats-box {
+    width: 40vw;
+    box-shadow: 10px 10px 20px rgb(65, 129, 54);
+  }
+
+  .stats-box h2 {
+    font-size: 1.6rem;
+  }
+  .stats-box p {
+    font-size: 0.9rem;
+  }
+
+  .macro-section {
+    margin: 2rem auto;
+  }
+
+  .macro-box h4 {
+    font-size: 1rem;
+  }
+  .macro-box p {
+    font-size: 0.9rem;
+  }
+
+
+  .micro-section{
+    margin: 2rem auto;
+  }
+
+  .micro-box {
+    width: 19vw;
+  }
+
+  .micro-box h4{
+    font-size: 1rem;
+  }
+
+  .micro-box p{
+    font-size: 0.9rem;
+  }
+
+  .meal-section {
+    flex-wrap: wrap;
+  }
+
+  .meal {
+    width: 35vw;
+  }
+
+  .meal h3{
+    font-size: 1rem;
+  }
+
+  .meal p {
+    font-size: 0.9rem;
+  }
+
+  .meal-info {
+    font-size: 0.8rem;
+  }
+
+  .search-input {
+    width: 70vw;
+    margin: 0.2rem;
+  }
+
 }

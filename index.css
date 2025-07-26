@@ -181,8 +181,6 @@ body {
   border-top: 1px solid #1e293b;
 }
 
-
-
 /* Responsiveness */
 
 @media screen and (min-width: 480px) and (max-width: 768px) {
@@ -207,10 +205,9 @@ body {
     gap: 2rem;
   }
 
-  .hero-image img{
+  .hero-image img {
     width: 80vw;
     object-fit: fill;
-    
   }
   .hero-content {
     width: 80vw;
@@ -228,7 +225,6 @@ body {
   }
 }
 
-
 @media screen and (min-width: 320px) and (max-width: 480px) {
   .navbar {
     flex-direction: row;
@@ -239,7 +235,7 @@ body {
     height: 100px;
   }
 
-  .download-btn{
+  .download-btn {
     padding: 0.8em 1.5em;
     font-size: 0.6rem;
   }
@@ -253,8 +249,8 @@ body {
   .hero-content {
     width: 90vw;
     height: auto;
-    }
-
+    box-shadow: 5px 5px 15px rgb(65, 129, 54);
+  }
 
   .hero-content h1 {
     font-size: 1.7rem;
@@ -262,13 +258,14 @@ body {
 
   .hero-content p {
     font-size: 1rem;
-    margin-bottom: 1rem
+    margin-bottom: 1rem;
   }
 
-  .about-us{
+  .about-us {
     width: 85vw;
     height: auto;
     padding: 2rem 1rem;
+    box-shadow: 5px 5px 15px rgb(100, 31, 51);
   }
 
   .about-us h2,
@@ -276,16 +273,17 @@ body {
     font-size: 1.5rem;
   }
 
-  .about-us p{
+  .about-us p {
     font-size: 0.9rem;
   }
 
-  .connect-section{
+  .connect-section {
     width: 85vw;
     height: auto;
+    box-shadow: 5px 5px 15px rgb(100, 31, 51);
   }
-  
-.connect-icons {
+
+  .connect-icons {
     justify-content: flex-start;
     flex-wrap: wrap;
   }
@@ -300,4 +298,3 @@ body {
     height: 20px;
   }
 }
-
