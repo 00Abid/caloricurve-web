@@ -19,11 +19,10 @@
     </div>
 
     <div class="navbar-right">
-      <div id="todayDate" class="date-box">Today : 2 <span id="date">October</span> 2023</div>
       <a href="nutrients.html">
-        <button class="menu-btn">&#9776;</button>
+        <button class="menu-btn">Nutrients Tip</button>
       </a>
-      <img src="assets/profile.png" alt="Profile" class="profile-pic">
+      <img src="" alt="Profile" class="profile-pic" id="profilePic">
     </div>
   </nav>
 
@@ -81,7 +80,8 @@
       </div>
       <div class="micro-box">
         <h4>Zinc</h4>
-        <p>0 mg</p>      </div>
+        <p>0 mg</p>
+      </div>
       <div class="micro-box">
         <h4>Calcium</h4>
         <p>0 mg</p>
@@ -167,22 +167,57 @@
         <span class="meal-info">80 kcal · 150g</span>
       </div>
     </div>
-
   </section>
+
+
+  <!-- Floating Button -->
+  <div id="calcToggleBtn" class="floating-calc-btn">⚖️</div>
+
+  <!-- Calculator Widget -->
+  <div id="calcWidget" class="calc-widget hidden">
+    <div class="calc-header">
+      <span>Nutrition Calculator</span>
+      <button class="x-btn" onclick="closeCalculator()">×</button>
+    </div>
+    <div class="calc-body">
+      <label>Age: <input type="number" id="age" /></label>
+      <label>Gender:
+        <select id="gender">
+          <option>Male</option>
+          <option>Female</option>
+        </select>
+      </label>
+      <label>Height (cm): <input type="number" id="height" /></label>
+      <label>Weight (kg): <input type="number" id="weight" /></label>
+      <label>Activity:
+        <select id="activity">
+          <option value="1.2">Sedentary</option>
+          <option value="1.375">Light</option>
+          <option value="1.55">Moderate</option>
+          <option value="1.725">Active</option>
+          <option value="1.9">Very Active</option>
+        </select>
+      </label>
+      <label>Goal:
+        <select id="goal">
+          <option value="maintain">Maintain</option>
+          <option value="lose">Lose</option>
+          <option value="gain">Gain</option>
+        </select>
+      </label>
+      <button onclick="calculateNutrition()" class="cal-btn">Calculate</button>
+      <div id="calcResult" class="calc-result"></div>
+    </div>
+  </div>
 
   <footer class="footer">
     <p class="footer-text">© 2025 CaloriCurve by Abid Khan</p>
   </footer>
 
 
-
-
-
-
-
-
-
-
+  <!-- Firebase Compat CDN -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-auth-compat.js"></script>
   <script src="app.js"></script>
 </body>
 

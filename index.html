@@ -1,85 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CaloriCurve - Your Personal Nutrients Companion</title>
-    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-      <div class="navbar-left">
-        <a href="#"><img src="assets/icon.png" alt="logo" class="logo" /></a>
-      </div>
 
-      <div class="navbar-right">
-        <button class="download-btn" id="download-apk">Download APK</button>
-      </div>
-    </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CaloriCurve - Your Personal Nutrients Companion</title>
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="index.css" />
+</head>
 
-    <!-- Hero -->
-    <section class="hero">
-      <div class="hero-image">
-        <img src="assets/hero-image.png" alt="App Preview" />
-      </div>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-left">
+      <a href="#"><img src="assets/icon.png" alt="logo" class="logo" /></a>
+    </div>
 
-      <div class="hero-content">
-        <h1>CaloriCurve</h1>
-        <p>Your personal calorie & nutrient companion</p>
-        <a href="signup.html"><button class="download-btn">Use On Web</button></a>
-      </div>
-    </section>
+    <div class="navbar-right">
+      <button class="download-btn" id="download-apk">Download APK</button>
+    </div>
+  </nav>
 
-    <!-- About -->
-    <section class="about-us">
-      <h2>About Us</h2>
-      <p>
-        CaloriCurve is designed to help you achieve your health and fitness
-        goals by providing a simple and intuitive way to track your daily
-        calorie intake and nutrient consumption. Our mission is to empower
-        individuals to make informed decisions about their diet and lifestyle,
-        leading to a healthier and happier life.
-      </p>
-    </section>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-image">
+      <img src="assets/hero-image.png" alt="App Preview" />
+    </div>
 
-    
-    <!-- Contact -->
-    <section class="connect-section">
-      <h2>Contact</h2>
-      <div class="connect-icons">
-        <a href="https://github.com/00Abid" target="_blank" class="icon-card">
-          <img
-            src="https://img.icons8.com/ios-filled/30/ffffff/github.png"
-            alt="GitHub"
-          />
-        </a>
-        <a href="https://www.linkedin.com/in/abid-khan-coder/" target="_blank" class="icon-card">
-          <img
-            src="https://img.icons8.com/ios-filled/30/ffffff/linkedin.png"
-            alt="LinkedIn"
-          />
-        </a>
-        <a href="https://x.com/kaabid1557" target="_blank" class="icon-card">
-          <img
-            src="https://img.icons8.com/ios-filled/30/ffffff/twitterx--v2.png"
-            alt="X"
-          />
-        </a>
-        <a href="mailto:kaabid1557@gmail.com" target="_blank" class="icon-card">
-          <img
-            src="https://img.icons8.com/ios-filled/30/ffffff/secured-letter.png"
-            alt="Email"
-          />
-        </a>
-      </div>
-    </section>
+    <div class="hero-content">
+      <h1>CaloriCurve</h1>
+      <p>Your personal calorie & nutrient companion</p>
+      <a href="signup.html"><button class="download-btn">Use On Web</button></a>
+    </div>
+  </section>
 
-    <footer class="footer">
-      <p class="footer-text">© 2025 CaloriCurve by Abid Khan</p>
-    </footer>
+  <!-- About -->
+  <section class="about-us">
+    <h2>About Us</h2>
+    <p>
+      CaloriCurve is designed to help you achieve your health and fitness
+      goals by providing a simple and intuitive way to track your daily
+      calorie intake and nutrient consumption. Our mission is to empower
+      individuals to make informed decisions about their diet and lifestyle,
+      leading to a healthier and happier life.
+    </p>
+  </section>
 
-    <script src="app.js"></script>
-  </body>
+
+  <!-- Contact -->
+  <section class="connect-section">
+    <h2>Contact</h2>
+    <div class="connect-icons">
+      <a href="https://github.com/00Abid" target="_blank" class="icon-card">
+        <img src="https://img.icons8.com/ios-filled/30/ffffff/github.png" alt="GitHub" />
+      </a>
+      <a href="https://www.linkedin.com/in/abid-khan-coder/" target="_blank" class="icon-card">
+        <img src="https://img.icons8.com/ios-filled/30/ffffff/linkedin.png" alt="LinkedIn" />
+      </a>
+      <a href="https://x.com/kaabid1557" target="_blank" class="icon-card">
+        <img src="https://img.icons8.com/ios-filled/30/ffffff/twitterx--v2.png" alt="X" />
+      </a>
+      <a href="mailto:kaabid1557@gmail.com" target="_blank" class="icon-card">
+        <img src="https://img.icons8.com/ios-filled/30/ffffff/secured-letter.png" alt="Email" />
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="footer-text">© 2025 CaloriCurve by Abid Khan</p>
+  </footer>
+
+  <script>
+    // For Current year in footer
+    let footerText = document.querySelector('.footer-text');
+    footerText.textContent = "© " + new Date().getFullYear() + " CaloriCurve by Abid Khan";
+
+
+    // For Downloading APK
+    document.querySelector('#download-apk').onclick = function () {
+      window.location.href = 'assets/CaloriCurve.apk';
+    };
+  </script>
+</body>
+
 </html>

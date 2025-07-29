@@ -18,9 +18,11 @@
     </div>
 
     <div class="navbar-right">
-        <div id="todayDate" class="date-box">Today : 2 <span id="date">October</span> 2023</div>
-        <button class="menu-btn">&#9776;</button>
-        <img src="assets/profile.png" alt="Profile" class="profile-pic">
+        <a href="main.html">
+            <button class="menu-btn">Main Page
+            </button>
+        </a>
+        <img src="" alt="Profile" class="profile-pic" id="profilePic">
     </div>
 </nav>
 
@@ -53,8 +55,40 @@
 
 
 
+<!-- Firebase CDN (compatible with HTML only, not modules) -->
+<script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-auth-compat.js"></script>
 
-<script src="nutrients.js"></script>
+
+
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyAT2jy5PQSKKG4Y01m_h_4uIWt9Dhz9rBk",
+        authDomain: "caloricurve-web.firebaseapp.com",
+        projectId: "caloricurve-web",
+        storageBucket: "caloricurve-web.appspot.com",
+        messagingSenderId: "269996776796",
+        appId: "1:269996776796:web:922a522a6aa687f4c6b599"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+
+    
+    firebase.auth().onAuthStateChanged(function (user) {
+        const profilePic = document.getElementById("profilePic");
+
+        if (user && user.providerData[0].providerId === "google.com") {
+            // Use Google profile picture
+            profilePic.src = user.photoURL;
+        } else {
+            // Use default image from assets
+            profilePic.src = "assets/profile.png";
+        }
+    });
+
+</script>
 </body>
 
 </html>
