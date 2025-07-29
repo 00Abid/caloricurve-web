@@ -31,19 +31,21 @@
   <section class="stats-row">
     <div class="stats-box">
       <p>BMI</p>
-      <h2>0</h2>
+      <h2 id="bmiValue">0</h2>
     </div>
 
     <div class="stats-box">
       <p>Calorie Progress</p>
-      <h2>0 / 0</h2>
+      <h2 id="calorieProgress">0 / 0</h2>
     </div>
 
     <div class="stats-box">
       <p>Goal</p>
-      <h2>0</h2>
+      <h2 id="goalValue">0</h2>
     </div>
   </section>
+
+
 
   <!-- MacroNutrients -->
   <section class="macro-section">
@@ -51,79 +53,83 @@
     <div class="macronutrient-grid">
       <div class="macro-box">
         <h4>Protein</h4>
-        <p>0 g</p>
+        <p id="proteinText">0 g / 0 g</p>
       </div>
       <div class="macro-box">
         <h4>Carbs</h4>
-        <p>0 mg</p>
+        <p id="carbsText">0 g / 0 g</p>
       </div>
       <div class="macro-box">
         <h4>Fibre</h4>
-        <p>0 mg</p>
+        <p id="fibreText">0 g / 0 g</p>
       </div>
       <div class="macro-box">
         <h4>Fats</h4>
-        <p>0 IU</p>
+        <p id="fatsText">0 g / 0 g</p>
       </div>
     </div>
   </section>
 
 
 
+
+  <!-- MicroNutrients -->
   <!-- MicroNutrients -->
   <section class="micro-section">
     <h3 class="heading">MicroNutrients</h3>
     <div class="micronutrient-grid">
       <div class="micro-box">
         <h4>Iron</h4>
-        <p>0 mg</p>
+        <p id="ironText">0 mg / 0 mg</p>
       </div>
       <div class="micro-box">
         <h4>Zinc</h4>
-        <p>0 mg</p>
+        <p id="zincText">0 mg / 0 mg</p>
       </div>
       <div class="micro-box">
         <h4>Calcium</h4>
-        <p>0 mg</p>
+        <p id="calciumText">0 mg / 0 mg</p>
       </div>
       <div class="micro-box">
         <h4>Vitamin A</h4>
-        <p>0 IU</p>
+        <p id="vitaminAText">0 mcg / 0 mcg</p>
       </div>
       <div class="micro-box">
         <h4>Vitamin B12</h4>
-        <p>0 IU</p>
+        <p id="vitaminB12Text">0 mcg / 0 mcg</p>
       </div>
       <div class="micro-box">
         <h4>Vitamin C</h4>
-        <p>0 IU</p>
+        <p id="vitaminCText">0 mg / 0 mg</p>
       </div>
       <div class="micro-box">
         <h4>Vitamin D</h4>
-        <p>0 IU</p>
+        <p id="vitaminDText">0 mcg / 0 mcg</p>
       </div>
       <div class="micro-box">
         <h4>Omega 3</h4>
-        <p>0 IU</p>
+        <p id="omega3Text">0 g / 0 g</p>
       </div>
       <div class="micro-box">
         <h4>Magnesium</h4>
-        <p>0 IU</p>
+        <p id="magnesiumText">0 mg / 0 mg</p>
       </div>
       <div class="micro-box">
         <h4>Potassium</h4>
-        <p>0 IU</p>
+        <p id="potassiumText">0 mg / 0 mg</p>
       </div>
       <div class="micro-box">
         <h4>Sodium</h4>
-        <p>0 IU</p>
+        <p id="sodiumText">0 mg / 0 mg</p>
       </div>
       <div class="micro-box">
         <h4>Sugar</h4>
-        <p>0 IU</p>
+        <p id="sugarText">0 g / 0 g</p>
       </div>
     </div>
   </section>
+
+
 
 
   <!-- Today meal section -->
@@ -205,7 +211,10 @@
           <option value="gain">Gain</option>
         </select>
       </label>
-      <button onclick="calculateNutrition()" class="cal-btn">Calculate</button>
+      <div class="cal-re-btn">
+        <button onclick="calculateNutrition()" class="cal-btn">Calculate</button>
+        <button onclick="resetCalories()" class="cal-btn">Reset</button>
+      </div>
       <div id="calcResult" class="calc-result"></div>
     </div>
   </div>

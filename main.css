@@ -10,6 +10,9 @@ body {
   background-color: #000000;
   color: #ffffff;
 }
+.hidden {
+  display: none;
+}
 
 /* Navbar */
 .navbar {
@@ -305,11 +308,15 @@ body {
   border: none;
 }
 
-.x-btn{
+.x-btn {
   background: #000000;
   color: white;
   border: none;
   font-size: 1.5rem;
+}
+
+.cal-re-btn{
+  display: flex;
 }
 .cal-btn {
   padding: 1.3em 3em;
@@ -331,6 +338,14 @@ body {
 .calc-result {
   margin-top: 10px;
   font-size: 13px;
+}
+.calc-widget {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.calc-widget.hidden {
+  transform: scale(0.95);
+  opacity: 0;
+  pointer-events: none;
 }
 
 footer {

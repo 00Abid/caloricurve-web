@@ -1,0 +1,145 @@
+aloriCurve Web App - Full Project Summary
+📌 Tech Stack
+Frontend: HTML, CSS, JavaScript
+
+Backend/Auth: Firebase Authentication (via Firebase JS SDK v9 compat)
+
+Data Handling: LocalStorage (no backend DB yet)
+
+Design Style: Responsive layout with sections for:
+
+User authentication
+
+Macro & micronutrient display
+
+Meal logging
+
+Floating nutrition calculator widget
+
+🔐 Authentication (Firebase)
+Login/Signup with Google using Firebase Auth.
+
+Displays user's profile picture in the navbar if authenticated with Google.
+
+If user is not logged in via Google, it shows a default avatar from assets/profile.png.
+
+Firebase scripts used:
+
+html
+Copy
+Edit
+<script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-auth-compat.js"></script>
+🔗 Navigation
+Navigation bar (<nav>) includes:
+
+Logo linked to home (index.html)
+
+Button link to nutrients.html (nutrient tips)
+
+User profile picture (dynamically updated via Firebase auth)
+
+📊 Stats Section
+BMI, Calories Progress, and Goal shown in boxes.
+
+Updated dynamically after calculation via JavaScript.
+
+🍛 MacroNutrients Section
+Displays:
+
+Protein (g)
+
+Carbs (mg)
+
+Fibre (mg)
+
+Fats (IU)
+
+🧬 MicroNutrients Section
+Displays the following, initially set to 0:
+
+Iron, Zinc, Calcium
+
+Vitamin A, B12, C, D
+
+Omega 3, Magnesium, Potassium, Sodium, Sugar
+
+🥗 Today’s Meal Section
+Example meals are shown:
+
+Breakfast, Lunch, Dinner, Snacks
+
+Includes food name, calories, and weight.
+
+An input field allows users to log new foods (feature is stubbed for now, can be made dynamic).
+
+🧮 Floating Nutrition Calculator Widget
+A floating calculator button (⚖️) opens a mini input form.
+
+Inputs:
+
+Age, Gender, Height, Weight
+
+Activity Level
+
+Goal (Maintain, Lose, Gain)
+
+Output displayed:
+
+Calories required (TDEE adjusted for goal)
+
+Macronutrients: Protein, Carbs, Fats (auto-calculated)
+
+Micronutrients: (currently placeholder values)
+
+🧠 Calculation Logic (JavaScript):
+Uses Mifflin-St Jeor equation:
+
+js
+Copy
+Edit
+const bmr = gender === "Male"
+  ? 10 * weight + 6.25 * height - 5 * age + 5
+  : 10 * weight + 6.25 * height - 5 * age - 161;
+
+const tdee = bmr * activityFactor;
+const goalCalories = goal === "lose" ? tdee - 500 : goal === "gain" ? tdee + 500 : tdee;
+Protein = 0.8g per kg, Carbs = 50% of calories, Fats = 25% of calories.
+
+🧠 Stats Auto-Update
+After calculation:
+
+BMI = weight / (height/100)^2
+
+Updates calorie progress and goal stats
+
+Values are shown in the respective <h2> and <p> elements in .stats-box
+
+📅 Today's Date Display
+Today’s date shown in the format: Today: 29 July 2025
+
+Also saved in localStorage for persistence:
+
+js
+Copy
+Edit
+const today = new Date();
+const formatted = today.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+document.getElementById("todayDate").innerText = "Today: " + formatted;
+localStorage.setItem("todayDate", formatted);
+💾 LocalStorage Use
+Stores today's date
+
+Can be extended to store user preferences or calculation history
+
+🛠️ Scripts Breakdown
+app.js: Firebase initialization + auth handling
+
+main.js or similar file:
+
+Handles toggle of calculator
+
+Performs nutrition calculations
+
+Updates DOM with results
+
