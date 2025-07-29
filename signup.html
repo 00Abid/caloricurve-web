@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up CaloriCurve</title>
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            height: 100vh;
+            font-family: "Segoe UI", sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 30vw;
+            text-align: center;
+            padding: 2rem;
+            border-radius: 12px;
+            background: #0e0d0d;
+            box-shadow: 15px 15px 30px rgb(65, 129, 54);
+        }
+
+        .logo {
+            margin: auto;
+            width: 218px;
+            height: 100px;
+        }
+
+        img {
+            width: 220px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        .login-box input {
+            color: #d5cdd0;
+            text-align: center;
+            display: block;
+            width: 80%;
+            border-radius: 12px;
+            background-color: #000000;
+            margin: 10px auto;
+            padding: 10px;
+            font-size: 1rem;
+            border: none;
+        }
+
+        .login-box button {
+            padding: 1.3em 3em;
+            margin-top: 1rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-weight: 500;
+            color: #fbfafa;
+            background-color: #000000;
+            border: none;
+            border-radius: 45px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease 0s;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .login-box button:hover {
+            background-color: #122512;
+            color: #fff;
+            transform: translateY(-7px);
+        }
+
+        @media screen and (min-width: 320px) and (max-width: 480px) {
+            .container {
+                width: 90vw;
+                box-shadow: 5px 5px 15px rgb(65, 129, 54);
+            }
+
+            .login-box input {
+                width: 100%;
+            }
+
+
+            .logo {
+                width: 100%;
+            }
+
+            img {
+                width: 180px;
+                height: 90px;
+            }
+        }
+
+        @media screen and (min-width: 481px) and (max-width: 768px) {
+            .container {
+                width: 50vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="assets/icon.png" alt="logo">
+        </div>
+        <div class="login-box">
+            <input type="email" id="signup-email" placeholder="Email" />
+            <input type="password" id="signup-password" placeholder="Password" />
+            <button onclick="signup()">Sign Up</button>
+            <button onclick="signUpWithGoogle()">Sign Up with Google</button>
+        </div>
+    </div>
+
+
+    <!-- Add this to your HTML head or before the script -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAT2jy5PQSKKG4Y01m_h_4uIWt9Dhz9rBk",
+            authDomain: "caloricurve.vercel.app",
+            projectId: "caloricurve-web",
+            storageBucket: "caloricurve-web.appspot.com",
+            messagingSenderId: "269996776796",
+            appId: "1:269996776796:web:922a522a6aa687f4c6b599"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Signup with email/password
+        window.signup = function () {
+            const email = document.getElementById("signup-email").value;
+            const password = document.getElementById("signup-password").value;
+
+            createUserWithEmailAndPassword(auth, email, password)
+                .then(() => {
+                    localStorage.setItem("userEmail", email);
+                    window.location.href = "main.html";
+                })
+                .catch(error => {
+                    alert("Signup failed: " + error.message);
+                });
+        };
+
+        // Signup with Google
+        window.signUpWithGoogle = function () {
+            const provider = new GoogleAuthProvider();
+            signInWithPopup(auth, provider)
+                .then(result => {
+                    localStorage.setItem("userEmail", result.user.email);
+                    window.location.href = "main.html";
+                })
+                .catch(error => {
+                    alert("Google signup failed: " + error.message);
+                });
+        };
+    </script>
+
+
+</body>
+
+</html>
