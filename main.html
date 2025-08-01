@@ -74,7 +74,6 @@
 
 
   <!-- MicroNutrients -->
-  <!-- MicroNutrients -->
   <section class="micro-section">
     <h3 class="heading">MicroNutrients</h3>
     <div class="micronutrient-grid">
@@ -138,8 +137,9 @@
       Today's Meals
     </h3>
     <div class="button space">
-      <input type="text" placeholder="Search Foods" class="search-input" />
-      <button class="add-food-btn">Add Food</button>
+      <input type="text" class="search-input" placeholder="Search Foods" id="foodInput" />
+      <div id="suggestions" class="suggestion-box"></div>
+      <button class="add-food-btn" id="addFoodbtn">Add Food</button>
     </div>
 
     <div class="meal-section">
@@ -148,7 +148,7 @@
     </div>
   </section>
 
-  
+
 
   <!-- Floating Button -->
   <div id="calcToggleBtn" class="floating-calc-btn">⚖️</div>

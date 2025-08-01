@@ -254,6 +254,20 @@ body {
   transform: translateY(-7px);
 }
 
+.suggestion-box {
+  position: absolute;
+  background: #0e0d0d;
+  height: auto;
+  border-radius: 12px;
+  overflow-y: auto;
+  width: 30vw;
+  z-index: 1000;
+}
+
+.suggestion-item {
+  padding: 8px;
+  cursor: pointer;
+}
 /* Calculator */
 .floating-calc-btn {
   position: fixed;
@@ -315,7 +329,7 @@ body {
   font-size: 1.5rem;
 }
 
-.cal-re-btn{
+.cal-re-btn {
   display: flex;
 }
 .cal-btn {
@@ -348,41 +362,14 @@ body {
   pointer-events: none;
 }
 
-/* suggestion box */
-.suggestion-box {
-  position: absolute;
-  background: white;
-  border: 1px solid #ccc;
-  max-height: 150px;
-  overflow-y: auto;
-  width: 100%;
-  z-index: 10;
-}
-
-.suggestion-item {
-  padding: 0.5rem;
-  cursor: pointer;
-}
-
-.suggestion-item:hover {
-  background: #eee;
-}
-
-.portion-select {
-  margin-top: 0.5rem;
-  padding: 0.4rem;
-  width: 100%;
-}
-
-.delete-meal-btn {
+.delete-meal {
   background: transparent;
   border: none;
-  color: rgb(0, 0, 0);
+  color: #94a3b8;
   font-size: 1.2rem;
   cursor: pointer;
   margin-left: 10px;
 }
-
 
 footer {
   text-align: center;
@@ -509,6 +496,9 @@ footer {
 
   .button-space {
     width: 80vw;
+  }
+  .suggestion-box {
+    width: 70vw;
   }
 }
 
