@@ -273,13 +273,18 @@ body {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #28a745;
-  color: white;
-  font-size: 24px;
+  background-color: #000000;
   padding: 12px;
   border-radius: 50%;
   cursor: pointer;
   z-index: 1000;
+}
+
+.floating-calc-btn img{
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+
 }
 
 .calc-widget {
