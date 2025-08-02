@@ -12,7 +12,7 @@ firebase.auth().onAuthStateChanged(function (user) {
   const profilePic = document.getElementById("profilePic");
   profilePic.src = (user && user.providerData[0].providerId === "google.com")
     ? user.photoURL
-    : "assets/profile.png";
+    : "profile.png";
 });
 
 
@@ -293,7 +293,7 @@ function createMealBlock(food) {
 }
 
 async function loadFoodData() {
-  const res = await fetch("/indianfoods.json");
+  const res = await fetch("indianfoods.json");
   foodData = await res.json();
 }
 
