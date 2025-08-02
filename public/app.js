@@ -293,7 +293,7 @@ function createMealBlock(food) {
 }
 
 async function loadFoodData() {
-  const res = await fetch("indianfoods.json");
+  const res = await fetch("/indianfoods.json");
   foodData = await res.json();
 }
 
