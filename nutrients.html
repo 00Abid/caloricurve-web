@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaloriCurve - Nutrients Tips</title>
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="nutrients.css">
+</head>
+
+
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="navbar-left">
+        <a href="index.html"><img src="assets/icon.png" alt="logo" class="logo" /></a>
+    </div>
+
+    <div class="navbar-right">
+        <a href="main.html">
+            <button class="menu-btn">Main Page
+            </button>
+        </a>
+    </div>
+</nav>
+
+<!-- Tip Section -->
+<section class="tips-section">
+    <div class="tip-box">
+        <div class="tip-text">
+            <h3>Today's Diet Suggestion</h3>
+            <p>Personalized meal plan for optimal nutrition.</p>
+            <button id="tip-btn" class="tip-btn">View Plan</button>
+            <div id="dietOutput" class="tip-output"></div>
+        </div>
+    </div>
+
+    <div class="tip-box">
+        <div class="tip-text">
+            <h3>Win the Day</h3>
+            <p>Daily advice to keep you on track with your health goals.</p>
+            <button id="diet-btn" class="tip-btn">Get Tips</button>
+            <div id="tipOutput" class="tip-output"></div>
+        </div>
+    </div>
+</section>
+
+
+<footer class="footer">
+    <p class="footer-text">© 2025 CaloriCurve by Abid Khan</p>
+</footer>
+
+
+
+
+<!-- Firebase CDN (compatible with HTML only, not modules) -->
+<script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-auth-compat.js"></script>
+
+
+
+<script>
+
+    // Diet plan suggestions
+    const dietPlans = [
+        "Include at least one seasonal fruit in your breakfast.",
+        "Go for complex carbs like oats, brown rice, or quinoa.",
+        "Add a portion of dal or legumes for protein.",
+        "Include a small salad with every meal.",
+        "Choose grilled or steamed options over fried food.",
+        "Stay hydrated — 8+ glasses of water per day."
+    ];
+
+    // Health tips
+    const dailyTips = [
+        "Start your day with 5 minutes of stretching.",
+        "Drink a glass of water right after you wake up.",
+        "Take short walks after meals to aid digestion.",
+        "Avoid screens 30 mins before bedtime for better sleep.",
+        "Use stairs instead of elevators when possible.",
+        "Practice mindful eating — eat slowly and without distractions."
+    ];
+
+    // Handle "View Plan" button
+    document.getElementById("tip-btn").addEventListener("click", () => {
+        const randomPlan = dietPlans[Math.floor(Math.random() * dietPlans.length)];
+        document.getElementById("dietOutput").innerText = randomPlan;
+    });
+
+    // Handle "Get Tips" button
+    document.getElementById("diet-btn").addEventListener("click", () => {
+        const randomTip = dailyTips[Math.floor(Math.random() * dailyTips.length)];
+        document.getElementById("tipOutput").innerText = randomTip;
+    });
+
+
+</script>
+</body>
+
+</html>

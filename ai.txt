@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /
+
+Owner: Abid Khan
+Contact: kaabid1557@gmail.com
+Website: https://caloricurve.vercel.app
