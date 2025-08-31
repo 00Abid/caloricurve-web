@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CaloriCurve Web</title>
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 </head>
+
 <body>
 
-  
+
 
   <!-- Navbar -->
   <nav class="navbar">
@@ -25,24 +28,24 @@
       <a href="signup.html">
         <button class="menu-btn">Sign Up</button>
       </a>
-      <img  class="hidden" src="" alt="Profile" id="profilePic">
+      <img class="hidden" src="" alt="Profile" id="profilePic">
     </div>
   </nav>
 
 
   <!-- Stat Section -->
   <section class="stats-row">
-    <div class="stats-box animate__animated animate__bounceInDown">
+    <div class="stats-box" data-aos="zoom-in-up">
       <p>BMI</p>
       <h2 id="bmiValue">0</h2>
     </div>
 
-    <div class="stats-box animate__animated animate__bounceInDown">
+    <div class="stats-box" data-aos="zoom-in-up">
       <p>Calorie Progress</p>
       <h2 id="calorieProgress">0 / 0</h2>
     </div>
 
-    <div class="stats-box animate__animated animate__bounceInDown">
+    <div class="stats-box" data-aos="zoom-in-up">
       <p>Goal</p>
       <h2 id="goalValue">0</h2>
     </div>
@@ -54,19 +57,19 @@
   <section class="macro-section">
     <h3 class="heading">MacroNutrients</h3>
     <div class="macronutrient-grid">
-      <div class="macro-box animate__animated animate__fadeInLeft">
+      <div class="macro-box" data-aos="fade-up-right">
         <h4>Protein</h4>
         <p id="proteinText">0 g / 0 g</p>
       </div>
-      <div class="macro-box animate__animated animate__fadeInLeft">
+      <div class="macro-box" data-aos="fade-up-right">
         <h4>Carbs</h4>
         <p id="carbsText">0 g / 0 g</p>
       </div>
-      <div class="macro-box animate__animated animate__fadeInRight">
+      <div class="macro-box" data-aos="fade-up-right">
         <h4>Fibre</h4>
         <p id="fibreText">0 g / 0 g</p>
       </div>
-      <div class="macro-box animate__animated animate__fadeInRight">
+      <div class="macro-box" data-aos="fade-up-right">
         <h4>Fats</h4>
         <p id="fatsText">0 g / 0 g</p>
       </div>
@@ -80,51 +83,51 @@
   <section class="micro-section">
     <h3 class="heading">MicroNutrients</h3>
     <div class="micronutrient-grid">
-      <div class="micro-box ">
+      <div class="micro-box" data-aos="fade-up-left">
         <h4>Iron</h4>
         <p id="ironText">0 mg / 0 mg</p>
       </div>
-      <div class="micro-box ">
+      <div class="micro-box" data-aos="fade-up-left">
         <h4>Zinc</h4>
         <p id="zincText">0 mg / 0 mg</p>
       </div>
-      <div class="micro-box ">
+      <div class="micro-box" data-aos="fade-up-left">
         <h4>Calcium</h4>
         <p id="calciumText">0 mg / 0 mg</p>
       </div>
-      <div class="micro-box ">
+      <div class="micro-box" data-aos="fade-up-left">
         <h4>Vitamin A</h4>
         <p id="vitaminAText">0 mcg / 0 mcg</p>
       </div>
-      <div class="micro-box ">
+      <div class="micro-box" data-aos="fade-up-left">
         <h4>Vitamin B12</h4>
         <p id="vitaminB12Text">0 mcg / 0 mcg</p>
       </div>
-      <div class="micro-box ">
+      <div class="micro-box " data-aos="fade-up-left">
         <h4>Vitamin C</h4>
         <p id="vitaminCText">0 mg / 0 mg</p>
       </div>
-      <div class="micro-box ">
+      <div class="micro-box " data-aos="fade-up-left">
         <h4>Vitamin D</h4>
         <p id="vitaminDText">0 mcg / 0 mcg</p>
       </div>
-      <div class="micro-box ">
+      <div class="micro-box " data-aos="fade-up-left">
         <h4>Omega 3</h4>
         <p id="omega3Text">0 g / 0 g</p>
       </div>
-      <div class="micro-box ">
+      <div class="micro-box " data-aos="fade-up-left">
         <h4>Magnesium</h4>
         <p id="magnesiumText">0 mg / 0 mg</p>
       </div>
-      <div class="micro-box ">
+      <div class="micro-box " data-aos="fade-up-left">
         <h4>Potassium</h4>
         <p id="potassiumText">0 mg / 0 mg</p>
       </div>
-      <div class="micro-box ">
+      <div class="micro-box " data-aos="fade-up-left">
         <h4>Sodium</h4>
         <p id="sodiumText">0 mg / 0 mg</p>
       </div>
-      <div class="micro-box ">
+      <div class="micro-box " data-aos="fade-up-left">
         <h4>Sugar</h4>
         <p id="sugarText">0 g / 0 g</p>
       </div>
@@ -206,6 +209,11 @@
   <!-- Firebase Compat CDN -->
   <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-auth-compat.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init(); 
+  </script>
+
   <script src="app.js"></script>
 </body>
 

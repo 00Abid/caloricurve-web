@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CaloriCurve - Your Personal Nutrients Companion</title>
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="index.css" />
   <meta name="description"
     content="CaloriCurve is your AI-powered daily calorie tracker and nutrition planner. Track your macros, micros, and meals effortlessly.">
@@ -48,11 +49,11 @@
 
   <!-- Hero -->
   <section class="hero">
-    <div class="hero-image">
+    <div class="hero-image" data-aos="zoom-out-left">
       <img src="assets/home-image.png" alt="App Preview" />
     </div>
 
-    <div class="hero-content">
+    <div class="hero-content" data-aos="zoom-out-right">
       <h1>CaloriCurve</h1>
       <p>Your personal calorie & nutrient companion</p>
       <a href="main.html"><button class="download-btn">Use On Web</button></a>
@@ -60,7 +61,7 @@
   </section>
 
   <!-- About -->
-  <section class="about-us">
+  <section class="about-us" data-aos="zoom-out-down">
     <h2>About Us</h2>
     <p>
       CaloriCurve is designed to help you achieve your health and fitness
@@ -73,7 +74,7 @@
 
 
   <!-- Contact -->
-  <section class="connect-section">
+  <section class="connect-section" data-aos="zoom-out-down">
     <h2>Contact</h2>
     <div class="connect-icons">
       <a href="https://github.com/00Abid" target="_blank" class="icon-card">
@@ -94,6 +95,11 @@
   <footer class="footer">
     <p class="footer-text">© 2025 CaloriCurve by Abid Khan</p>
   </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init(); 
+  </script>
 
   <script>
     // For Current year in footer
