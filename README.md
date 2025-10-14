@@ -1,6 +1,6 @@
 # CaloriCurve Web
 
-A modern calorie tracker built with HTML/CSS/JS. It includes a nutrition calculator, AI food logging, and AI-powered suggestions. Food data and advice are fetched from the backend service.
+A modern AI calorie tracker built with HTML/CSS/JS. It includes a nutrition calculator, AI food logging, and AI-powered suggestions. Food data and advice are fetched from the backend service.
 
 ## Features
 
