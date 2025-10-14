@@ -62,7 +62,7 @@ body {
 }
 
 .menu-btn:hover {
-  background-color:#2a0d15;
+  background-color: #2a0d15;
   transform: translateY(-7px);
 }
 
@@ -80,11 +80,14 @@ body {
 
 .tip-box {
   width: 70vw;
-  height: 40vh;
+  min-height: 40vh;
+  height: auto;
   margin: auto;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.75rem;
   background-color: #0d0f0e;
   padding: 1.5rem;
   border-radius: 12px;
@@ -92,7 +95,8 @@ body {
 }
 
 .tip-text {
-  max-width: 60%;
+  max-width: 100%;
+  width: 100%;
 }
 
 .tip-text h3 {
@@ -130,8 +134,25 @@ body {
   transform: translateY(-7px);
 }
 
+/* Suggestion output should grow naturally */
+.tip-output {
+  margin-top: 0.75rem;
+  color: #ffffff;
+  font-size: 15px;
+}
 
-.footer {
+.tip-output ul {
+  list-style: disc;
+  margin-left: 1.25rem;
+}
+
+.tip-output li {
+  margin-bottom: 1rem;
+}
+
+footer {
+  width: 70vw;
+  margin: 0rem auto;
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
@@ -184,6 +205,9 @@ body {
 
   .tip-btn {
     width: 100%;
+  }
+  .tip-output {
+    font-size: 11px;
   }
 }
 

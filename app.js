@@ -274,7 +274,7 @@ let totalMicros = { iron: 0, zinc: 0, calcium: 0, vitaminA: 0, vitaminB12: 0,
 
     mealDiv.innerHTML = `
       <p>${food.name}</p>
-      <p>${food.portion} <br> ${food.calories} kcal <br> <span class="meal-time">${timeLabel}</span></p>
+      <p>${food.portion} ${food.calories} kcal <br> <span class="meal-time">${timeLabel}</span></p>
       <button class="delete-meal">×</button>
     `;
     mealSection.appendChild(mealDiv);

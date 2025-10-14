@@ -169,7 +169,9 @@ body {
   margin-bottom: 0.3rem;
 }
 
-.footer {
+footer {
+  width: 70vw;
+  margin: 0rem auto;
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
@@ -235,9 +237,9 @@ body {
     padding: 0.8em 1.5em;
     font-size: 0.6rem;
   }
-  
-  .hero-image{
-    display:none;
+
+  .hero-image {
+    display: none;
   }
 
   .hero-content {

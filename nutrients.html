@@ -67,36 +67,101 @@
 
 <script>
 
-    // Diet plan suggestions
-    const dietPlans = [
-        "Include at least one seasonal fruit in your breakfast.",
-        "Go for complex carbs like oats, brown rice, or quinoa.",
-        "Add a portion of dal or legumes for protein.",
-        "Include a small salad with every meal.",
-        "Choose grilled or steamed options over fried food.",
-        "Stay hydrated — 8+ glasses of water per day."
-    ];
+    const API_BASE = "https://caloricurve-backend.onrender.com";
 
-    // Health tips
-    const dailyTips = [
-        "Start your day with 5 minutes of stretching.",
-        "Drink a glass of water right after you wake up.",
-        "Take short walks after meals to aid digestion.",
-        "Avoid screens 30 mins before bedtime for better sleep.",
-        "Use stairs instead of elevators when possible.",
-        "Practice mindful eating — eat slowly and without distractions."
-    ];
+    function readTotalsFromLocalStorage() {
+        const totals = JSON.parse(localStorage.getItem("totals") || "{}");
+        if (totals && totals.macros && totals.micros) return totals;
+        // Fallback: rebuild totals from mealsFull if available
+        const meals = JSON.parse(localStorage.getItem("mealsFull") || "[]");
+        let calories = 0;
+        let macros = { protein: 0, carbs: 0, fats: 0, fiber: 0 };
+        let micros = {
+            iron: 0, zinc: 0, calcium: 0, vitaminA: 0, vitaminB12: 0,
+            vitaminC: 0, vitaminD: 0, omega3: 0, cholesterol: 0,
+            magnesium: 0, potassium: 0, sodium: 0, sugar: 0
+        };
+        meals.forEach(f => {
+            calories += Number(f.calories || 0);
+            macros.protein += Number(f.protein || 0);
+            macros.carbs += Number(f.carbs || 0);
+            macros.fats += Number(f.fats || 0);
+            macros.fiber += Number(f.fiber || 0);
+            Object.keys(micros).forEach(k => { micros[k] += Number(f[k] || 0); });
+        });
+        return { calories, macros, micros };
+    }
 
-    // Handle "View Plan" button
-    document.getElementById("tip-btn").addEventListener("click", () => {
-        const randomPlan = dietPlans[Math.floor(Math.random() * dietPlans.length)];
-        document.getElementById("dietOutput").innerText = randomPlan;
+    function readGoalsFromLocalStorage() {
+        const stats = JSON.parse(localStorage.getItem("nutritionStats") || "{}");
+        return stats || {};
+    }
+
+    async function fetchAdvice(totals, goals) {
+        const res = await fetch(`${API_BASE}/api/advice`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ totals, goals })
+        });
+        if (!res.ok) {
+            const text = await res.text();
+            throw new Error(text || `Request failed (${res.status})`);
+        }
+        return res.json();
+    }
+
+    function renderList(targetId, items) {
+        const container = document.getElementById(targetId);
+        if (!items || items.length === 0) {
+            container.innerText = "No suggestions available yet. Please add foods.";
+            return;
+        }
+        const ul = document.createElement("ul");
+        ul.style.marginTop = "0.75rem";
+        items.forEach(it => {
+            const li = document.createElement("li");
+            li.textContent = it;
+            ul.appendChild(li);
+        });
+        container.innerHTML = "";
+        container.appendChild(ul);
+    }
+
+    const viewPlanBtn = document.getElementById("tip-btn");
+    const getTipsBtn = document.getElementById("diet-btn");
+    const dietOutput = document.getElementById("dietOutput");
+    const tipOutput = document.getElementById("tipOutput");
+
+    viewPlanBtn.addEventListener("click", async () => {
+        const original = viewPlanBtn.textContent;
+        viewPlanBtn.disabled = true; viewPlanBtn.textContent = "Loading...";
+        dietOutput.textContent = "";
+        try {
+            const totals = readTotalsFromLocalStorage();
+            const goals = readGoalsFromLocalStorage();
+            const advice = await fetchAdvice(totals, goals);
+            renderList("dietOutput", advice.dietSuggestions);
+        } catch (e) {
+            dietOutput.innerText = `Error: ${e.message}`;
+        } finally {
+            viewPlanBtn.disabled = false; viewPlanBtn.textContent = original;
+        }
     });
 
-    // Handle "Get Tips" button
-    document.getElementById("diet-btn").addEventListener("click", () => {
-        const randomTip = dailyTips[Math.floor(Math.random() * dailyTips.length)];
-        document.getElementById("tipOutput").innerText = randomTip;
+    getTipsBtn.addEventListener("click", async () => {
+        const original = getTipsBtn.textContent;
+        getTipsBtn.disabled = true; getTipsBtn.textContent = "Loading...";
+        tipOutput.textContent = "";
+        try {
+            const totals = readTotalsFromLocalStorage();
+            const goals = readGoalsFromLocalStorage();
+            const advice = await fetchAdvice(totals, goals);
+            renderList("tipOutput", advice.tips);
+        } catch (e) {
+            tipOutput.innerText = `Error: ${e.message}`;
+        } finally {
+            getTipsBtn.disabled = false; getTipsBtn.textContent = original;
+        }
     });
 
 
@@ -104,4 +169,3 @@
 </body>
 
 </html>
-

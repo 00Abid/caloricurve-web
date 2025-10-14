@@ -248,9 +248,8 @@ body {
 }
 
 .meal-card p:nth-child(2) {
-  color: #a7f3d0; 
+  color: #a7f3d0;
   font-size: 0.8rem;
-  width: 30vw;
 }
 
 .delete-meal {
@@ -548,6 +547,7 @@ footer {
 
   .meal p :nth-child(2) {
     font-size: 0.8rem;
+    width: 30vw;
   }
 
   .search-input {
@@ -632,7 +632,6 @@ footer {
   .meal p:nth-child(2) {
     font-size: 0.9rem;
   }
-
 
   .meal-card {
     width: 100%;
