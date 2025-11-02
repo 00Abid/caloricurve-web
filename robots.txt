@@ -1,0 +1,7 @@
+User-agent: *
+Disallow:
+
+# Sitemap reference (keep in sync if you change domain)
+Sitemap: https://caloricurve.vercel.app/sitemap.xml
+
+# Crawl-rate and additional rules can be added here for large sites.

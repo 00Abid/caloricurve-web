@@ -4,7 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign-up CaloriCurve</title>
+    <title>Sign Up — CaloriCurve</title>
+    <meta name="description"
+        content="Create your CaloriCurve account to start tracking calories, macros and get AI nutrition tips.">
+    <meta name="author" content="Abid Khan">
+    <meta name="robots" content="noindex, follow">
+    <!-- sign-up pages are typically noindexed until ready for public sign-ups -->
+    <link rel="canonical" href="https://caloricurve.vercel.app/signup.html">
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     <style>
         * {
@@ -120,74 +126,75 @@
 </head>
 
 <body>
+
     <body>
-    <div class="container">
-        <div class="logo">
-            <img src="assets/icon.png" alt="logo">
+        <div class="container">
+            <div class="logo">
+                <img src="assets/icon.png" alt="logo" width="100" height="100">
+            </div>
+            <div class="login-box">
+                <input type="email" id="signup-email" placeholder="Email" />
+                <input type="password" id="signup-password" placeholder="Password" />
+                <button onclick="signup()">Sign Up</button>
+                <button onclick="signUpWithGoogle()">Sign Up with Google</button>
+            </div>
+            <div class="login-ask">
+                <p>Already Have Account</p>
+                <button id="login-btn">Login</button>
+            </div>
         </div>
-        <div class="login-box">
-            <input type="email" id="signup-email" placeholder="Email" />
-            <input type="password" id="signup-password" placeholder="Password" />
-            <button onclick="signup()">Sign Up</button>
-            <button onclick="signUpWithGoogle()">Sign Up with Google</button>
-        </div>
-        <div class="login-ask">
-            <p>Already Have Account</p>
-            <button id="login-btn">Login</button>
-        </div>
-    </div>
 
-    <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-auth-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-auth-compat.js"></script>
 
-    <script>
-        // Initialize Firebase
-        const firebaseConfig = {
-            apiKey: "AIzaSyAT2jy5PQSKKG4Y01m_h_4uIWt9Dhz9rBk",
-            authDomain: "caloricurve-web.firebaseapp.com", // Corrected to match your project
-            projectId: "caloricurve-web",
-            storageBucket: "caloricurve-web.appspot.com",
-            messagingSenderId: "269996776796",
-            appId: "1:269996776796:web:922a522a6aa687f4c6b599"
-        };
+        <script>
+            // Initialize Firebase
+            const firebaseConfig = {
+                apiKey: "AIzaSyAT2jy5PQSKKG4Y01m_h_4uIWt9Dhz9rBk",
+                authDomain: "caloricurve-web.firebaseapp.com", // Corrected to match your project
+                projectId: "caloricurve-web",
+                storageBucket: "caloricurve-web.appspot.com",
+                messagingSenderId: "269996776796",
+                appId: "1:269996776796:web:922a522a6aa687f4c6b599"
+            };
 
-        firebase.initializeApp(firebaseConfig);
-        const auth = firebase.auth();
+            firebase.initializeApp(firebaseConfig);
+            const auth = firebase.auth();
 
-        // Signup with email/password
-        window.signup = function () {
-            const email = document.getElementById("signup-email").value;
-            const password = document.getElementById("signup-password").value;
+            // Signup with email/password
+            window.signup = function () {
+                const email = document.getElementById("signup-email").value;
+                const password = document.getElementById("signup-password").value;
 
-            auth.createUserWithEmailAndPassword(email, password)
-                .then(() => {
-                    localStorage.setItem("userEmail", email);
-                    window.location.href = "main.html";
-                })
-                .catch(error => {
-                    alert("Signup failed: " + error.message);
-                });
-        };
+                auth.createUserWithEmailAndPassword(email, password)
+                    .then(() => {
+                        localStorage.setItem("userEmail", email);
+                        window.location.href = "main.html";
+                    })
+                    .catch(error => {
+                        alert("Signup failed: " + error.message);
+                    });
+            };
 
-        // Signup with Google
-        window.signUpWithGoogle = function () {
-            const provider = new firebase.auth.GoogleAuthProvider();
-            auth.signInWithPopup(provider)
-                .then(result => {
-                    localStorage.setItem("userEmail", result.user.email);
-                    window.location.href = "main.html";
-                })
-                .catch(error => {
-                    alert("Google signup failed: " + error.message);
-                });
-        };
+            // Signup with Google
+            window.signUpWithGoogle = function () {
+                const provider = new firebase.auth.GoogleAuthProvider();
+                auth.signInWithPopup(provider)
+                    .then(result => {
+                        localStorage.setItem("userEmail", result.user.email);
+                        window.location.href = "main.html";
+                    })
+                    .catch(error => {
+                        alert("Google signup failed: " + error.message);
+                    });
+            };
 
-        // Login button redirect
-        document.getElementById("login-btn").addEventListener("click", function () {
-            window.location.href = "login.html";
-        });
-    </script>
-</body>
+            // Login button redirect
+            document.getElementById("login-btn").addEventListener("click", function () {
+                window.location.href = "login.html";
+            });
+        </script>
+    </body>
 </body>
 
 </html>

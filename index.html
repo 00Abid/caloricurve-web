@@ -10,9 +10,10 @@
   <link rel="stylesheet" href="index.css" />
   <meta name="description"
     content="CaloriCurve is your AI-powered daily calorie tracker and nutrition planner. Track your macros, micros, and meals effortlessly.">
-  <meta name="keywords"
-    content="CaloriCurve, calorie tracker, AI nutrition planner, macros, Indian food nutrition, diet log, health, fitness app">
   <meta name="author" content="Abid Khan">
+
+  <meta name="msvalidate.01" content="B406A713428734B7264507731D5DC69A" />
+  <meta name="google-site-verification" content="ytfTCtnXBBd9JGVolRG9rVjjZ0nGgZEO0uEfnJQUFvY" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:title" content="CaloriCurve - Smart Nutrition Tracker">
@@ -20,6 +21,7 @@
   <meta property="og:image" content="https://caloricurve.vercel.app/assets/hero-image.png"> <!-- Update this -->
   <meta property="og:url" content="https://caloricurve.vercel.app/">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CaloriCurve">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -33,13 +35,73 @@
   <!-- Favicon -->
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 
+  <!-- Robots -->
+  <meta name="robots" content="index, follow">
+
+  <!-- Google verification (paste your code below) -->
+  <!-- <meta name="google-site-verification" content="PASTE_VERIFICATION_TOKEN_HERE" /> -->
+
+  <!-- Google Analytics / GA4 (paste your measurement id) -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
+
+  <!-- Structured Data: WebSite + Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://caloricurve.vercel.app/#website",
+        "url": "https://caloricurve.vercel.app/",
+        "name": "CaloriCurve",
+        "description": "AI-powered calorie & nutrition tracker built for Indian diets.",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://caloricurve.vercel.app/main.html?query={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://caloricurve.vercel.app/#organization",
+        "name": "CaloriCurve",
+        "url": "https://caloricurve.vercel.app/",
+        "logo": "https://caloricurve.vercel.app/assets/icon.png"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-P2W9G7ZH');</script>
+  <!-- End Google Tag Manager -->
 </head>
 
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P2W9G7ZH" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <!-- Navbar -->
   <nav class="navbar">
     <div class="navbar-left">
-      <a href="#"><img src="assets/icon.png" alt="logo" class="logo" /></a>
+      <a href="#"><img src="assets/icon.png" alt="logo" class="logo" width="100" height="100" /></a>
     </div>
 
     <div class="navbar-right">
@@ -50,7 +112,8 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero-image" data-aos="zoom-out-left">
-      <img src="assets/home-image.png" alt="App Preview" />
+      <img src="assets/home-image.png" alt="CaloriCurve AI nutrition tracker app dashboard preview" width="600"
+        height="400" />
     </div>
 
     <div class="hero-content" data-aos="zoom-out-right">
@@ -64,7 +127,8 @@
   <section class="about-us" data-aos="zoom-out-down">
     <h2>About Us</h2>
     <p>
-      CaloriCurve helps you build healthier habits with a simple, intuitive way to track daily calories and nutrients using AI.
+      CaloriCurve helps you build healthier habits with a simple, intuitive way to track daily calories and nutrients
+      using AI.
       Our mission is to empower you with clear, culturally relevant guidance so you can make confident food choices and
       feel your best.
     </p>
@@ -75,17 +139,17 @@
   <section class="connect-section" data-aos="zoom-out-down">
     <h2>Contact</h2>
     <div class="connect-icons">
-      <a href="https://github.com/00Abid" target="_blank" class="icon-card">
-        <img src="https://img.icons8.com/ios-filled/30/ffffff/github.png" alt="GitHub" />
+      <a href="https://github.com/00Abid" target="_blank" rel="noopener" class="icon-card">
+        <img src="https://img.icons8.com/ios-filled/30/ffffff/github.png" alt="GitHub" width="30" height="30" />
       </a>
-      <a href="https://www.linkedin.com/in/abid-khan-coder/" target="_blank" class="icon-card">
-        <img src="https://img.icons8.com/ios-filled/30/ffffff/linkedin.png" alt="LinkedIn" />
+      <a href="https://www.linkedin.com/in/abid-khan-coder/" target="_blank" rel="noopener" class="icon-card">
+        <img src="https://img.icons8.com/ios-filled/30/ffffff/linkedin.png" alt="LinkedIn" width="30" height="30" />
       </a>
-      <a href="https://x.com/kaabid1557" target="_blank" class="icon-card">
-        <img src="https://img.icons8.com/ios-filled/30/ffffff/twitterx--v2.png" alt="X" />
+      <a href="https://x.com/kaabid1557" target="_blank" rel="noopener" class="icon-card">
+        <img src="https://img.icons8.com/ios-filled/30/ffffff/twitterx--v2.png" alt="X" width="30" height="30" />
       </a>
-      <a href="mailto:kaabid1557@gmail.com" target="_blank" class="icon-card">
-        <img src="https://img.icons8.com/ios-filled/30/ffffff/secured-letter.png" alt="Email" />
+      <a href="mailto:kaabid1557@gmail.com" target="_blank" rel="noopener" class="icon-card">
+        <img src="https://img.icons8.com/ios-filled/30/ffffff/secured-letter.png" alt="Email" width="30" height="30" />
       </a>
     </div>
   </section>

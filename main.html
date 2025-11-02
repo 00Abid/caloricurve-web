@@ -4,8 +4,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CaloriCurve Web</title>
+  <title>CaloriCurve — Track Calories & Nutrients</title>
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+  <meta name="description"
+    content="Use CaloriCurve Web to calculate calories, track macros and micros, and keep a daily food log with AI-powered suggestions.">
+  <meta name="keywords" content="CaloriCurve, calorie tracker, nutrition, macros, micronutrients, food log">
+  <meta name="author" content="Abid Khan">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="CaloriCurve — Track Calories & Nutrients">
+  <meta property="og:description"
+    content="Calculate calories, log meals and track macros/micros with helpful AI suggestions.">
+  <meta property="og:image" content="https://caloricurve.vercel.app/assets/home-image.png">
+  <meta property="og:url" content="https://caloricurve.vercel.app/main.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CaloriCurve">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CaloriCurve — Track Calories & Nutrients">
+  <meta name="twitter:description"
+    content="Calculate calories, log meals and track macros/micros with helpful AI suggestions.">
+  <meta name="twitter:image" content="https://caloricurve.vercel.app/assets/home-image.png">
+
+  <link rel="canonical" href="https://caloricurve.vercel.app/main.html">
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
@@ -18,7 +41,7 @@
   <!-- Navbar -->
   <nav class="navbar">
     <div class="navbar-left">
-      <a href="index.html"><img src="assets/icon.png" alt="logo" class="logo" /></a>
+      <a href="index.html"><img src="assets/icon.png" alt="logo" class="logo" width="100" height="100" /></a>
     </div>
 
     <div class="navbar-right">
@@ -28,10 +51,13 @@
       <a href="signup.html">
         <button class="menu-btn">Sign Up</button>
       </a>
-      <img class="hidden" src="" alt="Profile" id="profilePic">
+      <img class="hidden" src="" alt="Profile" id="profilePic" width="50" height="50">
     </div>
   </nav>
 
+
+  <!-- Main Heading -->
+  <h1>CaloriCurve Dashboard</h1>
 
   <!-- Stat Section -->
   <section class="stats-row">
@@ -150,7 +176,7 @@
 
     <div class="meal-section">
       <div class="meal-section" id="mealSection">
-        
+
       </div>
 
     </div>
@@ -160,7 +186,7 @@
 
   <!-- Floating Button -->
   <div id="calcToggleBtn" class="floating-calc-btn">
-    <img src="assets/calculator-svg.svg" alt="calculator-svg">
+    <img src="assets/calculator-svg.svg" alt="calculator-svg" width="50" height="50">
   </div>
 
   <!-- Calculator Widget -->
